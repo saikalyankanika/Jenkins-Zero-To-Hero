@@ -9,6 +9,7 @@ pipeline {
                     echo "Jenkins is running the pipeline as user: ${jenkinsUser}"
                 }
             }
+    }
             
     stage('Back-end') {
       agent {
