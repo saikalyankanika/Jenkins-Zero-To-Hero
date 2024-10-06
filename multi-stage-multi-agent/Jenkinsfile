@@ -1,14 +1,7 @@
 pipeline {
-  agent any
+  agent none
   stages {
-            stage('Check Jenkins User') {
-            steps {
-                script {
-                    def jenkinsUser = bat(script: 'whoami', returnStdout: true).trim()
-                    echo "Jenkins is running the pipeline as user: ${jenkinsUser}"
-                }
-            }
-        }
+            
     stage('Back-end') {
       agent {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
