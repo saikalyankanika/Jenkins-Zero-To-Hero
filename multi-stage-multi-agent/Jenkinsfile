@@ -1,6 +1,14 @@
 pipeline {
   agent none
   stages {
+
+    stage('Check Jenkins User') {
+            steps {
+                script {
+                    def jenkinsUser = sh(script: 'whoami', returnStdout: true).trim()
+                    echo "Jenkins is running the pipeline as user: ${jenkinsUser}"
+                }
+            }
             
     stage('Back-end') {
       agent {
