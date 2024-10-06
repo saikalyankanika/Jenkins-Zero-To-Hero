@@ -1,6 +1,9 @@
 pipeline {
   agent none
   stages {
+    stage('user') {
+    powershell 'whoami'
+    }
     stage('Back-end') {
       agent {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
